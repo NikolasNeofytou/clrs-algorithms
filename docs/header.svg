@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1220"/>
+      <stop offset="100%" style="stop-color:#111827"/>
+    </linearGradient>
+    <linearGradient id="spine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e3a5f"/>
+      <stop offset="100%" style="stop-color:#0369a1"/>
+    </linearGradient>
+    <linearGradient id="cover" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f5f4"/>
+      <stop offset="60%" style="stop-color:#e7e5e4"/>
+      <stop offset="100%" style="stop-color:#d6d3d1"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="900" height="220" rx="12" fill="url(#bg)"/>
+
+  <!-- Book (CLRS is famously white/cream) -->
+  <rect x="40" y="25" width="12" height="170" rx="2" fill="url(#spine)"/>
+  <rect x="52" y="25" width="120" height="170" rx="0 4 4 0" fill="url(#cover)"/>
+  <rect x="52" y="25" width="120" height="170" rx="0 4 4 0" fill="none" stroke="#a8a29e" stroke-width="0.5" opacity="0.6"/>
+  
+  <!-- Book cover details (CLRS-inspired) -->
+  <text x="112" y="55" text-anchor="middle" fill="#1c1917" font-family="Georgia, serif" font-size="9" font-weight="700" letter-spacing="1">INTRODUCTION TO</text>
+  <text x="112" y="80" text-anchor="middle" fill="#0c0a09" font-family="Georgia, serif" font-size="16" font-weight="700">Algorithms</text>
+  <line x1="68" y1="88" x2="155" y2="88" stroke="#78716c" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- Abstract tree/graph on cover -->
+  <circle cx="95" cy="115" r="4" fill="none" stroke="#0ea5e9" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="112" cy="105" r="4" fill="none" stroke="#0ea5e9" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="129" cy="115" r="4" fill="none" stroke="#0ea5e9" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="103" cy="130" r="4" fill="none" stroke="#0ea5e9" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="121" cy="130" r="4" fill="none" stroke="#0ea5e9" stroke-width="1.2" opacity="0.6"/>
+  <line x1="112" y1="109" x2="95" y2="111" stroke="#0ea5e9" stroke-width="0.8" opacity="0.4"/>
+  <line x1="112" y1="109" x2="129" y2="111" stroke="#0ea5e9" stroke-width="0.8" opacity="0.4"/>
+  <line x1="95" y1="119" x2="103" y2="126" stroke="#0ea5e9" stroke-width="0.8" opacity="0.4"/>
+  <line x1="129" y1="119" x2="121" y2="126" stroke="#0ea5e9" stroke-width="0.8" opacity="0.4"/>
+  
+  <text x="112" y="160" text-anchor="middle" fill="#57534e" font-family="system-ui, sans-serif" font-size="6.5">CORMEN · LEISERSON</text>
+  <text x="112" y="170" text-anchor="middle" fill="#57534e" font-family="system-ui, sans-serif" font-size="6.5">RIVEST · STEIN</text>
+  
+  <!-- Page edges -->
+  <line x1="172" y1="28" x2="172" y2="192" stroke="#334155" stroke-width="1"/>
+  <line x1="171" y1="29" x2="171" y2="191" stroke="#1e293b" stroke-width="1"/>
+  
+  <!-- Title text -->
+  <text x="210" y="65" fill="#e2e8f0" font-family="Georgia, serif" font-size="28" font-weight="700">Algorithms</text>
+  <text x="210" y="95" fill="#94a3b8" font-family="Georgia, serif" font-size="16" font-style="italic">don't just implement — prove</text>
+  
+  <line x1="210" y1="110" x2="380" y2="110" stroke="#334155" stroke-width="1"/>
+  
+  <text x="210" y="135" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Cormen, Leiserson, Rivest &amp; Stein (CLRS)</text>
+  <text x="210" y="158" fill="#475569" font-family="system-ui, sans-serif" font-size="11">Feel the Slowness → Read the Theory → Build &amp; Benchmark</text>
+  
+  <!-- Phase icons -->
+  <g transform="translate(210, 172)">
+    <rect x="0" y="0" width="100" height="22" rx="4" fill="#451a03" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="50" y="15" text-anchor="middle" fill="#fcd34d" font-family="system-ui, sans-serif" font-size="9" font-weight="600">Feel the Slowness</text>
+    
+    <rect x="110" y="0" width="60" height="22" rx="4" fill="#4c1d95" stroke="#8b5cf6" stroke-width="0.8"/>
+    <text x="140" y="15" text-anchor="middle" fill="#c4b5fd" font-family="system-ui, sans-serif" font-size="9" font-weight="600">Read</text>
+    
+    <rect x="180" y="0" width="110" height="22" rx="4" fill="#052e16" stroke="#22c55e" stroke-width="0.8"/>
+    <text x="235" y="15" text-anchor="middle" fill="#86efac" font-family="system-ui, sans-serif" font-size="9" font-weight="600">Build &amp; Benchmark</text>
+  </g>
+
+  <!-- Stats on the right -->
+  <g transform="translate(680, 45)">
+    <text x="0" y="0" fill="#475569" font-family="system-ui, sans-serif" font-size="10" letter-spacing="2">CHAPTERS</text>
+    <text x="0" y="25" fill="#e2e8f0" font-family="Georgia, serif" font-size="32" font-weight="700">11</text>
+    <text x="40" y="25" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">planned</text>
+    
+    <text x="0" y="55" fill="#475569" font-family="system-ui, sans-serif" font-size="10" letter-spacing="2">TESTS</text>
+    <text x="0" y="80" fill="#e2e8f0" font-family="Georgia, serif" font-size="32" font-weight="700">60</text>
+    <text x="45" y="80" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">per chapter</text>
+    
+    <text x="0" y="110" fill="#475569" font-family="system-ui, sans-serif" font-size="10" letter-spacing="2">KEY INSIGHT</text>
+    <text x="0" y="130" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Every algorithm instrumented</text>
+    <text x="0" y="145" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">with operation counters</text>
+    
+    <text x="0" y="170" fill="#475569" font-family="system-ui, sans-serif" font-size="10" letter-spacing="2">PROOF METHOD</text>
+    <text x="0" y="188" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="11" font-weight="600">2x input → 4x ops = O(n²)</text>
+  </g>
+</svg>

@@ -1,4 +1,6 @@
-# Algorithms: Don't Just Implement — Prove
+<p align="center">
+  <img src="docs/header.svg" alt="Algorithms — CLRS" width="100%"/>
+</p>
 
 > Selection sort on 20,000 elements: 14.3 seconds. Python's built-in sort on the same data: 0.003 seconds. Same input, same output. The difference is the algorithm. — *Chapter 2, Phase 1*
 
