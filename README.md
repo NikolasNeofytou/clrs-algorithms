@@ -4,6 +4,10 @@
 
 This repo turns CLRS (*Introduction to Algorithms*) into projects you build and benchmark. The twist: you don't just implement algorithms — you instrument them with operation counters and **prove their complexity empirically**. Double the input, watch comparisons quadruple? That's O(n²), and you measured it yourself.
 
+<p align="center">
+  <img src="docs/pedagogy-flow.svg" alt="Pedagogy: Feel the Slowness → Read → Build and Prove" width="100%"/>
+</p>
+
 ---
 
 ## How It Works
@@ -12,7 +16,15 @@ This repo turns CLRS (*Introduction to Algorithms*) into projects you build and 
 
 **Phase 2 — Read.** Guided reading that connects the performance gap to specific textbook sections. You already know *why* merge sort matters — you just watched selection sort choke.
 
-**Phase 3 — Build.** TODO-scaffolded implementation with operation counting baked in. Every sort counts its comparisons. Every graph search counts its edge relaxations. The test suite doesn't just check correctness — it checks *performance properties*: "doubling the input should roughly quadruple the comparisons for O(n²)."
+**Phase 3 — Build.** TODO-scaffolded implementation with operation counting baked in. Every sort counts its comparisons. Every graph search counts its edge relaxations. The test suite doesn't just check correctness — it verifies *performance properties*:
+
+```
+test_basic.py       →  Does it sort correctly?
+test_edges.py       →  Empty input, duplicates, negatives?
+test_hard.py        →  Does doubling n quadruple comparisons? (O(n²) proof)
+test_properties.py  →  Does merge sort beat insertion on large random input?
+                        Does insertion beat merge on sorted input?
+```
 
 ---
 
@@ -34,30 +46,25 @@ This repo turns CLRS (*Introduction to Algorithms*) into projects you build and 
 
 ## Chapter 2: Sort Lab
 
-Phase 1 shows selection sort struggling on 20,000 elements while Python's built-in sort finishes instantly. It counts operations: 5x more data causes 25x more comparisons — the O(n²) signature.
+Phase 1 shows selection sort struggling on 20,000 elements while Python's built-in finishes instantly. It counts operations: 5x more data → 25x more comparisons — the O(n²) signature.
 
-After reading Chapter 2, you implement 5 functions:
+After reading, you implement 5 functions:
 
 ```
 TODO 1: Insertion Sort        → with comparison and swap counting
 TODO 2: Merge Sort            → with comparison, copy, and recursion counting
-TODO 3: Execution Tracer      → step-by-step trace showing the array after each operation
+TODO 3: Execution Tracer      → step-by-step trace showing array state after each operation
 TODO 4: Benchmark Runner      → time algorithms on random, sorted, reverse, duplicate inputs
 TODO 5: Comparison Report     → head-to-head on identical data, proving when each wins
 ```
 
-The test suite verifies *performance properties*, not just correctness:
+The Chapter 2 punchline, proven by your own benchmarks:
 
-- Insertion sort uses O(n) comparisons on sorted input and O(n²) on reverse — *measured*
-- Merge sort uses roughly the same comparisons regardless of input type — *measured*
-- Doubling input size quadruples insertion sort comparisons (±tolerance) — *measured*
-- Doubling input size roughly doubles merge sort comparisons — *measured*
-- On sorted input, insertion sort beats merge sort in comparisons — *measured*
-- On large random input, merge sort beats insertion sort — *measured*
-
-That last pair is the Chapter 2 punchline: there is no single "best" algorithm. Context matters.
-
-## Running It
+- Insertion sort: **O(n)** on sorted input, **O(n²)** on reverse — *measured*
+- Merge sort: **O(n log n)** regardless of input — *measured*
+- On sorted input, insertion sort **beats** merge sort
+- On large random input, merge sort **dominates**
+- There is no single "best" algorithm. **Context matters.**
 
 ```bash
 cd ch2-sort-lab
@@ -77,5 +84,5 @@ Every chapter adds to a growing performance portfolio. By the end of the book, y
 | Repo | Domain | Method |
 |---|---|---|
 | **This repo** | Algorithms | Feel the slowness → Read → Build and benchmark |
-| [stallings-security](https://github.com/USERNAME/stallings-security) | Computer Security | Feel the attack → Read → Build the defense (test suite) |
-| [cfo-microeconomics](https://github.com/USERNAME/cfo-microeconomics) | Economics | Puzzle → Read → Model → Debate → Data |
+| [stallings-security](https://github.com/NikolasNeofytou/stallings-security) | Computer Security | Feel the attack → Read → Build the defense |
+| [cfo-microeconomics](https://github.com/NikolasNeofytou/cfo-microeconomics) | Economics | Puzzle → Read → Model → Debate → Data |
